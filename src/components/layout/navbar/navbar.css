@@ -12,16 +12,20 @@
     background-color: rgb(0, 59, 107);
     padding: 1em;
     border-radius: 20px;
-
+    height: fit-content;
 }
+
 .navbar-container-notifications {
     background-color: rgb(0, 66, 121);
     padding: 1em;
     border-radius: 20px;
+
 }
 .navbar-container-notifications h2 {
     margin-top: 0;
     margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
 
 }
 

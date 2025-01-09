@@ -4,9 +4,12 @@
 
 A simple React application to interact with Notifications items received from external systems
 
+For styling, it uses elements from Flowbite and Tailwind CSS
+
 
 
 ## Status
+
 - [X] Initial scaffolding
 - [X] Default index HTML and normalize CSS
 - [ ] Entrega 1: Crea tu landing
@@ -31,7 +34,22 @@ npm create vite@latest
 cd react_65675_prj
 npm install
 npm install react-icons --save
+npm install flowbite-react
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
+
+#### Integrate Flowebite + tailwindcss with Vite
+
+[Flowbite Vite integration](https://flowbite-react.com/docs/guides/vite)
+
+[Tailwind Vite integration](https://tailwindcss.com/docs/guides/vite)
+
+Get sample config files initilizing a new project: 
+```
+npm create flowbite-react@latest -- --template vite  
+```
+
 
 ### Initial project scaffolding script
 
