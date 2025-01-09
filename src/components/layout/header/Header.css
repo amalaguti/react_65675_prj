@@ -1,0 +1,13 @@
+header {
+    background-color: rgb(161, 100, 8);
+    margin: 0;
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.welcomeMsg {
+    color: gold;
+    font-size: 1.1rem;
+}

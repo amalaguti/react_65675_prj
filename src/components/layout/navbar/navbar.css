@@ -1,5 +1,5 @@
 .navbar-container {
-    background-color: rgb(0, 59, 107);
+    background-color: rgb(0, 29, 53);
     display: flex;
     padding: 20px;
     flex: 1;
@@ -8,37 +8,23 @@
     gap: 20px;
 }
 
-.welcomeMsg {
-    color: gold;
-    font-size: 1.1rem;
-}
-
-.navbar-container a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-}
-
 .navbar-container-general {
+    background-color: rgb(0, 59, 107);
+    padding: 1em;
+    border-radius: 20px;
 
+}
+.navbar-container-notifications {
+    background-color: rgb(0, 66, 121);
+    padding: 1em;
+    border-radius: 20px;
 }
 .navbar-container-notifications h2 {
     margin-top: 0;
+    margin-bottom: 0;
 
 }
 
-.notificationStatus-All {
-    color: rgb(121, 121, 172) !important;
-}
-
-.notificationStatus-Start {
-    color: rgb(91, 193, 91) !important;
-}
-
-.notificationStatus-Running {
-    color: orange !important;
-}
-
-.notificationStatus-Final {
-    color: rgb(121, 124, 86) !important;
+li.notificationStatus-All {
+    text-align: end;
 }

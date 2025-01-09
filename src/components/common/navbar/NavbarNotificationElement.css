@@ -1,0 +1,13 @@
+.notificationStatus-All {
+    color: rgb(180, 180, 223) !important;
+}
+
+.notificationStatus-Start {
+    color: rgb(91, 193, 91) !important;
+}
+.notificationStatus-Running {
+    color: orange !important;
+}
+.notificationStatus-Final {
+    color: rgb(123, 127, 71) !important;
+}

@@ -1,9 +1,11 @@
+import Header from "./components/layout/header/Header.jsx"
 import Navbar from "./components/layout/navbar/Navbar"
 function App() {
   return (
-    <div>
-      <Navbar user="Adrian" />
-    </div>
+    <>
+      <Header user="Adrian" />
+      <Navbar />
+      </>
   )
 }
 

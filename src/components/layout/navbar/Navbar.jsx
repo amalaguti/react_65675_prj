@@ -1,64 +1,45 @@
 import "./navbar.css";
+import NavbarGeneralElement from "../../common/navbar/NavbarGeneralElement.jsx";
+import NavbarNotificationElement from "../../common/navbar/NavbarNotificationElement.jsx";
 
 // TODO: Add logo, react icons and bootstrap
 const Navbar = (props) => {
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <p>
-          Notifications Manager:{" "}
-          <span className="welcomeMsg">Welcome {props.user || "Guest"}</span>
-        </p>
-      </div>
-      <div>
-        <ul className="navbar-container">
-          <div className="navbar-container-general">
-            <li>
-              <a href="/home">Home</a>
-            </li>
-
-            <li>
-              <a href="/Platforms">Platforms</a>
-            </li>
-          </div>
-          <div className="navbar-container-notifications">
-            <h2> Notifications </h2>
-            <li>
-              <a
+    <>
+      <nav className="navbar">
+        <div>
+          <ul className="navbar-container">
+            <div className="navbar-container-general">
+              <NavbarGeneralElement text="Home" href="/home" />
+              <NavbarGeneralElement text="Platforms" href="/Platforms" />
+            </div>
+            <div className="navbar-container-notifications">
+              <h2> Notifications </h2>
+              <NavbarNotificationElement
                 className="notificationStatus notificationStatus-All"
+                text="All"
                 href="/NotificationsAll"
-              >
-                All
-              </a>
-            </li>
-            <li>
-              <a
+              />
+              <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Start"
+                text="Start"
                 href="/NotificationsStart"
-              >
-                Start
-              </a>
-            </li>
-            <li>
-              <a
+              />
+              <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Running"
+                text="Running"
                 href="/NotificationsRunning"
-              >
-                Running
-              </a>
-            </li>
-            <li>
-              <a
-                className="notificationStatus notificationStatus-Final "
+              />
+              <NavbarNotificationElement
+                className="notificationStatus notificationStatus-Final"
+                text="Final"
                 href="/NotificationsFinal"
-              >
-                Final
-              </a>
-            </li>
-          </div>
-        </ul>
-      </div>
-    </nav>
+              />
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 };
 
