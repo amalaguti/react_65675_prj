@@ -1,6 +1,13 @@
 # React 65675
 
-## Initial build notes
+
+## Status
+
+- [ ] Entrega 1: Crea tu landing
+
+## DEV Notes
+
+### Initial build notes
 
 ```
 npm create vite@latest
@@ -9,6 +16,8 @@ npm install
 npm install react-icons --save
 ```
 
-## Status
+### Initial project scaffolding script
 
-- [ ] Entrega 1: Crea tu landing
+```
+ ./scripts/initial_scaffolding.sh  
+```
