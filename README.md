@@ -1,5 +1,10 @@
 # React 65675
 
+## Description
+
+A simple React application to interact with Notifications items received from external systems
+
+
 
 ## Status
 - [X] Initial scaffolding
