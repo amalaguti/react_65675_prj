@@ -1,11 +1,18 @@
 .navbar-container {
     background-color: rgb(0, 29, 53);
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
-    flex: 1;
+    gap: 1em;
+}
+
+.navbar-container-elements {
+    background-color: rgb(0, 29, 53);
+    display: flex;
     flex-wrap: wrap;
     list-style: none;
-    gap: 20px;
+    gap: 1em;
+    margin-right: 2em;
 }
 
 .navbar-container-general {
@@ -26,9 +33,15 @@
     margin-bottom: 0;
     font-size: 20px;
     font-weight: bold;
-
 }
-
 li.notificationStatus-All {
     text-align: end;
 }
+
+
+.navbar-container-cartWidget {
+    position: absolute;
+    right: 10px;
+}
+
+    

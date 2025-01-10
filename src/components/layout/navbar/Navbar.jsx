@@ -1,14 +1,17 @@
 import "./navbar.css";
 import NavbarGeneralElement from "../../common/navbar/NavbarGeneralElement.jsx";
 import NavbarNotificationElement from "../../common/navbar/NavbarNotificationElement.jsx";
+import { CartWidget } from "../../common/cartWidget/CartWidget.jsx";
 
-// TODO: Add logo, react icons and bootstrap
+// import logo from "../../../assets/image-logo.png";
+
+
 const Navbar = (props) => {
   return (
     <>
       <nav className="navbar">
-        <div>
-          <ul className="navbar-container">
+        <div className="navbar-container">
+          <ul className="navbar-container-elements">
             <div className="navbar-container-general">
               <NavbarGeneralElement text="Home" href="/home" />
               <NavbarGeneralElement text="Platforms" href="/Platforms" />
@@ -37,6 +40,9 @@ const Navbar = (props) => {
               />
             </div>
           </ul>
+          <div className="navbar-container-cartWidget">
+            <CartWidget />
+          </div>
         </div>
       </nav>
     </>
