@@ -1,0 +1,10 @@
+.notifications-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+#notifications-header-logo {
+    color: orange;
+}

@@ -22,17 +22,6 @@
     height: fit-content;
 }
 
-#notifications-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-}
-#notifications-header-logo {
-    color: orange;
-}
-
-
 .navbar-container-notifications {
     background-color: rgb(0, 66, 121);
     padding: 1em;
