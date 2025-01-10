@@ -2,9 +2,7 @@ import "./navbar.css";
 import NavbarGeneralElement from "../../common/navbar/NavbarGeneralElement.jsx";
 import NavbarNotificationElement from "../../common/navbar/NavbarNotificationElement.jsx";
 import { CartWidget } from "../../common/cartWidget/CartWidget.jsx";
-
-// import logo from "../../../assets/image-logo.png";
-
+import { MdNotificationsActive } from "react-icons/md";
 
 const Navbar = (props) => {
   return (
@@ -17,7 +15,9 @@ const Navbar = (props) => {
               <NavbarGeneralElement text="Platforms" href="/Platforms" />
             </div>
             <div className="navbar-container-notifications">
-              <h2> Notifications </h2>
+              <div id="notifications-header">
+              <h2> Notifications </h2> <MdNotificationsActive id="notifications-header-logo" />
+              </div>
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-All"
                 text="All"
