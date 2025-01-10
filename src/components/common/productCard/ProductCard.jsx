@@ -1,8 +1,9 @@
+import "./productCard.css";
+
 export const ProductCard = (props) => {
-  console.log(props);
 
   return (
-    <div style={{ border: "2px solid black" }}>
+    <div className="product-card">
       <h3>
         <b>{props.titulo}</b>
       </h3>
