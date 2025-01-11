@@ -5,9 +5,15 @@ import "./NotificationCard.css";
 import { Button, Card } from "flowbite-react";
 
 export function NotificationCard(props) {  
-  const notification = props.notification;
+  const notification = props.notification
+
+  if (!notification) {
+    alert("No available notifications");
+    return null;
+  }
+
   return (
-    <Card className="notificationCard max-w-sm">
+    <Card className="notificationCard">
       <h5 className="text-2xl font-bold tracking-tight text-gray-500 dark:text-white">
         {notification.title}
       </h5>
