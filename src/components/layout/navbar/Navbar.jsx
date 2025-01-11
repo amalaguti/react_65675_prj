@@ -2,7 +2,6 @@ import "./navbar.css";
 import NavbarGeneralElement from "../../common/navbar/NavbarGeneralElement.jsx";
 import NavbarNotificationElement from "../../common/navbar/NavbarNotificationElement.jsx";
 import { CartWidget } from "../../common/cartWidget/CartWidget.jsx";
-// import { MdNotificationsActive } from "react-icons/md";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader.jsx";
 
 const Navbar = (props) => {

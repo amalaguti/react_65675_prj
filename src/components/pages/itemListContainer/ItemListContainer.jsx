@@ -1,31 +1,21 @@
 import "./ItemListContainer.css";
-import { ProductCard } from "../../common/productCard/ProductCard";
+import { NotificationCard } from "../../common/productCard/NotificationCard";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
+
+import { mockNotifications} from "../../../mock/notifications/notifications";
 
 const ItemListContainer = () => {
   return (
     <div id="notifications-container" className="notifications-container">
-      <NotificationsHeader id="notifications-header" className="notifications-header" logoId="notifications-header-item-logo"/>
-      <ProductCard
-        titulo="titulo 1"
-        precio="precio 1"
-        description="descripcion 1"
+      <NotificationsHeader
+        id="notifications-header"
+        className="notifications-header"
+        logoId="notifications-header-item-logo"
       />
-      <ProductCard
-        titulo="titulo 2"
-        precio="precio 2"
-        description="descripcion 2"
-      />
-      <ProductCard
-        titulo="titulo 3"
-        precio="precio 3"
-        description="descripcion 3"
-      />
-      <ProductCard
-        titulo="titulo 4"
-        precio="precio 4"
-        description="descripcion 4"
-      />
+      <NotificationCard notification={mockNotifications[0]} />
+      <NotificationCard notification={mockNotifications[1]} />
+      <NotificationCard notification={mockNotifications[2]} />
+      
     </div>
   );
 };
