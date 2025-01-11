@@ -1,5 +1,5 @@
 #stickyFooterBottom {
-    position: absolute;
+    position: sticky;
     bottom: 0;
     height: fit-content;
     padding: 5px;
