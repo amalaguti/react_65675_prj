@@ -1,15 +1,13 @@
-// import "./noti
+import "./NotificationCard.css";
 
 ("use client");
 
 import { Button, Card } from "flowbite-react";
-export function NotificationCard(props) {
-  
-  const notification = props.notification;
-  
 
+export function NotificationCard(props) {  
+  const notification = props.notification;
   return (
-    <Card className="max-w-sm">
+    <Card className="notificationCard max-w-sm">
       <h5 className="text-2xl font-bold tracking-tight text-gray-500 dark:text-white">
         {notification.title}
       </h5>
@@ -31,11 +29,11 @@ export function NotificationCard(props) {
         </li>
         <li>
           <strong>Creation:</strong>{" "}
-          {new Date(props.creation).toLocaleString()}
+          {new Date(notification.creation).toLocaleString()}
         </li>
         <li>
           <strong>Last Update:</strong>{" "}
-          {new Date(props.last_update).toLocaleString()}
+          {new Date(notification.last_update).toLocaleString()}
         </li>
         <li>
           <strong>Type:</strong> {notification.type}
