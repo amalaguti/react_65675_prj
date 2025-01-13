@@ -6,6 +6,7 @@ export default function NotificationsHeader(props) {
     <div id={props.id} className={props.className}>
       <h2> Notifications </h2>{" "}
       <MdNotificationsActive id={props.logoId} />
+      <span><b>Platform:</b> {props.platform} </span>
     </div>
   );
 }

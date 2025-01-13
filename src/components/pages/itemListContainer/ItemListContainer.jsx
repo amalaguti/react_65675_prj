@@ -12,6 +12,7 @@ const ItemListContainer = (props) => {
         id="notifications-header"
         className="notifications-header"
         logoId="notifications-header-item-logo"
+        platform={props.platform}
       />
       <div
         id="notifications-container-cards"

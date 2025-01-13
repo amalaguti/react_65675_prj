@@ -18,7 +18,7 @@ function App() {
       <Navbar notificationsCounter={count} />
       <main>
         <Counter count={count} callback={setCount} />
-        <ItemListContainer notifications={mockNotifications} />
+        <ItemListContainer notifications={mockNotifications} platform="Mock"/>
       </main>
       <Footer />
     </>
