@@ -14,7 +14,7 @@ export const Counter = ({ count, callback }) => {
   console.log("count: ", count);
   return (
     <div className="notifications-counter inline-flex gap-2">
-      <Button className="p-0 m-0 text-sm">-</Button>
+      <Button className="p-0 m-0 text-sm" onClick={substract}>-</Button>
       <span>Notifications counter: {count} </span>
       <Button className="p-0 m-0 text-sm" onClick={add}>+</Button>
     </div>

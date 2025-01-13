@@ -57,3 +57,11 @@ npm create flowbite-react@latest -- --template vite
 ```
  ./scripts/initial_scaffolding.sh  
 ```
+
+### Integration with npm + vite + gh-pages
+
+[How To Deploy A React Vite App To Github Pages (Simple)](https://www.youtube.com/watch?v=hn1IkJk24ow)
+```
+npm run build
+npm run deploy
+```
