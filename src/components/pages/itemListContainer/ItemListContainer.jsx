@@ -3,7 +3,6 @@ import "./ItemListContainer.css";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
 import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
 
-
 const ItemListContainer = (props) => {
   const mockNotifications = props.notifications;
 

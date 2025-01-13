@@ -6,23 +6,21 @@ export const NotificationButtonsActions = () => {
   return (
     <div
       id="notificationButtonsActions"
-      className="flex flex-wrap gap-1 space-x-2"
+      className="flex flex-wrap gap-1 space-x-2 justify-center"
     >
-      <Button className="px-0 py-0 text-sm">
-        Start
+      <Button title="Start" className="px-0 py-0 text-sm">
         <svg
-          className="-mr-1 ml-2 h-4 w-4"
+          className="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M6.293 4.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L11.586 10 6.293 5.707a1 1 0 010-1.414z" />
         </svg>
-      </Button >
-      <Button className="px-0 py-0 text-sm">
-        Pause
+      </Button>
+      <Button title="Pause" className="px-0 py-0 text-sm">
         <svg
-          className="-mr-1 ml-2 h-4 w-4"
+          className="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -34,10 +32,9 @@ export const NotificationButtonsActions = () => {
           />
         </svg>
       </Button>
-      <Button className="px-0 py-0 text-sm">
-        Terminate
+      <Button title="Terminate" className="px-0 py-0 text-sm">
         <svg
-          className="-mr-1 ml-2 h-4 w-4"
+          className="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -49,17 +46,16 @@ export const NotificationButtonsActions = () => {
           />
         </svg>
       </Button>
-      <Button id="notificationBtnRemove" className="px-0 py-0 text-sm">
-        Remove
+      <Button title="Remove" id="notificationBtnRemove" className="px-0 py-0 text-sm">
         <svg
-          className="-mr-1 ml-2 h-4 w-4"
+          className="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             fillRule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H3a1 1 0 100 2h1v10a2 2 0 002 2h8a2 2 0 002-2V6h1a1 1 0 100-2h-2V3a1 1 0 00-1-1H6zm3 4a1 1 0 112 0v8a1 1 0 11-2 0V6zm4 0a1 1 0 10-2 0v8a1 1 0 102 0V6z"
+            d="M6 2a1 1 0 00-1 1v1H3a2 1 0 100 2h1v10a2 2 0 002 2h8a2 2 0 002-2V6h1a1 1 0 100-2h-2V3a1 1 0 00-1-1H6zm3 4a1 1 0 112 0v8a1 1 0 11-2 0V6zm4 0a1 1 0 10-2 0v8a1 1 0 102 0V6z"
             clipRule="evenodd"
           />
         </svg>

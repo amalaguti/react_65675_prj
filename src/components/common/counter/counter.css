@@ -1,9 +1,10 @@
-.dark {
-  background-color: black;
-  color: white;
-}
-
-.normal {
-  background-color: steelblue;
-  color: white;
+.notifications-counter button > * {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  width: 2ch;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
 }
