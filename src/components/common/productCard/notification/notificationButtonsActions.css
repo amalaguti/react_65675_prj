@@ -1,0 +1,13 @@
+#notificationButtonsActions {
+}
+
+#notificationButtonsActions button {
+    background-color: rgb(213, 138, 0);
+    margin-left: 0px;
+}
+
+#notificationBtnRemove {
+    background-color: #f44336 !important;
+    color: white;
+}
+

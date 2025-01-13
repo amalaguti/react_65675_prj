@@ -1,5 +1,6 @@
 import "./NotificationCard.css";
-import { calcCost } from "../../../../utils/notificationManagement";
+import { NotificationDetailsList } from "./NotificationDetailsList";
+import { NotificationButtonsActions } from "./NotificationButtonsActions";
 
 ("use client");
 
@@ -21,36 +22,9 @@ export function NotificationCard(props) {
       <p className="font-normal text-gray-700 dark:text-gray-400">
         {notification.description}
       </p>
-      <ul className="pl-5 space-y-2 text-gray-900 dark:text-white">
-        <li>
-          <strong>ID:</strong> {notification.ID}
-        </li>
-        <li>
-          <strong>JID:</strong> {notification.JID}
-        </li>
-        <li>
-          <strong>Status:</strong> {notification.status}
-        </li>
-        <li>
-          <strong>Consumer:</strong> {notification.consumer}
-        </li>
-        <li>
-          <strong>Creation:</strong>{" "}
-          {new Date(notification.creation).toLocaleString()}
-        </li>
-        <li>
-          <strong>Last Update:</strong>{" "}
-          {new Date(notification.last_update).toLocaleString()}
-        </li>
-        <li>
-          <strong>Type:</strong> {notification.type}
-        </li>
-        <li>
-          <strong>Cost:</strong> <b>${calcCost(notification.type)}</b>
-        </li>
-      </ul>
-      <Button>
-        Read more
+      <NotificationDetailsList notification={notification} />
+      <Button className="max-w-40">
+        More info
         <svg
           className="-mr-1 ml-2 h-4 w-4"
           fill="currentColor"
@@ -64,6 +38,7 @@ export function NotificationCard(props) {
           />
         </svg>
       </Button>
+      <NotificationButtonsActions />
     </Card>
   );
 }
