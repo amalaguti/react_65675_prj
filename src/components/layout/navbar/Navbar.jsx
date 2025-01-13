@@ -20,6 +20,7 @@ const Navbar = (props) => {
                 className="notificationStatus notificationStatus-All"
                 text="All"
                 href="/NotificationsAll"
+                notificationsCounter={props.notificationsCounter}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Start"

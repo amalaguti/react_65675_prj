@@ -10,7 +10,6 @@ export function NotificationCard(props) {
   const notification = props.notification;
 
   if (!notification) {
-    alert("No available notifications");
     return null;
   }
 

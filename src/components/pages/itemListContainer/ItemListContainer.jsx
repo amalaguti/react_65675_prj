@@ -1,10 +1,12 @@
 import "./ItemListContainer.css";
-import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
+
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
+import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
 
-import { mockNotifications } from "../../../mock/notifications/notifications";
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
+  const mockNotifications = props.notifications;
+
   return (
     <div id="notifications-container" className="notifications-container">
       <NotificationsHeader
@@ -12,7 +14,6 @@ const ItemListContainer = () => {
         className="notifications-header"
         logoId="notifications-header-item-logo"
       />
-
       <div
         id="notifications-container-cards"
         className="notifications-container-cards"
@@ -20,7 +21,6 @@ const ItemListContainer = () => {
         <NotificationCard notification={mockNotifications[0]} />
         <NotificationCard notification={mockNotifications[1]} />
         <NotificationCard notification={mockNotifications[2]} />
-
       </div>
     </div>
   );
