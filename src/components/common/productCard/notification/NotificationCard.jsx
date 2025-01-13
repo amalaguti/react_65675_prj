@@ -1,11 +1,12 @@
 import "./NotificationCard.css";
+import { calcCost } from "../../../../utils/notificationManagement";
 
 ("use client");
 
 import { Button, Card } from "flowbite-react";
 
-export function NotificationCard(props) {  
-  const notification = props.notification
+export function NotificationCard(props) {
+  const notification = props.notification;
 
   if (!notification) {
     alert("No available notifications");
@@ -20,7 +21,7 @@ export function NotificationCard(props) {
       <p className="font-normal text-gray-700 dark:text-gray-400">
         {notification.description}
       </p>
-      <ul className="list-disc pl-5 space-y-2 text-gray-900 dark:text-white">
+      <ul className="pl-5 space-y-2 text-gray-900 dark:text-white">
         <li>
           <strong>ID:</strong> {notification.ID}
         </li>
@@ -43,6 +44,9 @@ export function NotificationCard(props) {
         </li>
         <li>
           <strong>Type:</strong> {notification.type}
+        </li>
+        <li>
+          <strong>Cost:</strong> <b>${calcCost(notification.type)}</b>
         </li>
       </ul>
       <Button>
