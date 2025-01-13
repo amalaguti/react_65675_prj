@@ -8,7 +8,7 @@ export const NotificationButtonsActions = () => {
       id="notificationButtonsActions"
       className="flex flex-wrap gap-1 space-x-2"
     >
-      <Button>
+      <Button className="px-0 py-0 text-sm">
         Start
         <svg
           className="-mr-1 ml-2 h-4 w-4"
@@ -18,8 +18,8 @@ export const NotificationButtonsActions = () => {
         >
           <path d="M6.293 4.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L11.586 10 6.293 5.707a1 1 0 010-1.414z" />
         </svg>
-      </Button>
-      <Button>
+      </Button >
+      <Button className="px-0 py-0 text-sm">
         Pause
         <svg
           className="-mr-1 ml-2 h-4 w-4"
@@ -34,7 +34,7 @@ export const NotificationButtonsActions = () => {
           />
         </svg>
       </Button>
-      <Button>
+      <Button className="px-0 py-0 text-sm">
         Terminate
         <svg
           className="-mr-1 ml-2 h-4 w-4"
@@ -49,7 +49,7 @@ export const NotificationButtonsActions = () => {
           />
         </svg>
       </Button>
-      <Button id="notificationBtnRemove">
+      <Button id="notificationBtnRemove" className="px-0 py-0 text-sm">
         Remove
         <svg
           className="-mr-1 ml-2 h-4 w-4"

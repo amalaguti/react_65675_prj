@@ -16,14 +16,14 @@ export function NotificationCard(props) {
 
   return (
     <Card className="notificationCard">
-      <h5 className="text-2xl font-bold tracking-tight text-gray-500 dark:text-white">
+      <h5 className="text-sm font-bold tracking-tight text-gray-500 dark:text-white">
         {notification.title}
       </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
+      <p className="text-xs font-normal text-gray-700 dark:text-gray-400">
         {notification.description}
       </p>
       <NotificationDetailsList notification={notification} />
-      <Button className="max-w-40">
+      <Button className="px-0 py-0 text-sm">
         More info
         <svg
           className="-mr-1 ml-2 h-4 w-4"

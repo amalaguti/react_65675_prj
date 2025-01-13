@@ -4,8 +4,8 @@ import { calcCost } from "../../../../utils/notificationManagement";
 export const NotificationDetailsList = (props) => {
   const notification = props.notification;
   return (
-    <ul className="pl-5 space-y-2 text-gray-900 dark:text-white">
-      <li>
+    <ul className="text-xs pl-5 flex flex-wrap gap-2 space-y-2 text-gray-900 dark:text-white">
+      <li className="content-end">
         <strong>ID:</strong> {notification.ID}
       </li>
       <li>
