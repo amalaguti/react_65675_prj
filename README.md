@@ -12,17 +12,17 @@ For styling, it uses elements from Flowbite and Tailwind CSS
 
 - [X] Initial scaffolding
 - [X] Default index HTML and normalize CSS
-- [ ] Entrega 1: Crea tu landing
-    -  [ ] Archivos para los componentes en carperta components:
-        - [ ] NavBar
-        - [ ] CartWidget
-        - [ ] ItemListContainer
+- [X] Entrega 1: Crea tu landing
+    -  [X] Archivos para los componentes en carperta components:
+        - [X] NavBar
+        - [X] CartWidget
+        - [X] ItemListContainer
 
     - [ ] Organización correcta de los mismos:
-        - [ ] `NavBar` e `ItemListContainer` serán renderizados en `App`.
-        - [ ] `CartWidget` será renderizado en `NavBar`.
+        - [X] `NavBar` e `ItemListContainer` serán renderizados en `App`.
+        - [X] `CartWidget` será renderizado en `NavBar`.
 
-    - [ ] Uso de `props` para enviar un string con un mensaje hacia el componente `ItemListContainer`.
+    - [X] Uso de `props` para enviar un string con un mensaje hacia el componente `ItemListContainer`.
 
 
 ## DEV Notes
@@ -37,6 +37,7 @@ npm install react-icons --save
 npm install flowbite-react
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+npm install gh-pages
 ```
 
 #### Integrate Flowebite + tailwindcss with Vite
