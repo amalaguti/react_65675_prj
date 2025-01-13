@@ -1,0 +1,16 @@
+li span.notif_status_start {
+    background-color: lightgreen;
+    font-size: 1.2em;
+}
+
+li span.notif_status_running {
+    background-color: orange;
+    font-size: 1.2em;
+}
+
+li span.notif_status_final {
+    background-color: green;
+    color: white;
+    font-size: 1.2em;
+}
+

@@ -1,8 +1,20 @@
 import "./notificationDetailsList.css";
-import { calcCost } from "../../../../utils/notificationManagement";
+import { calcCost, NOTIFICATION_STATUS } from "../../../../utils/notificationManagement";
 
 export const NotificationDetailsList = (props) => {
   const notification = props.notification;
+    
+  let classNameStatus = "UNRESOLVED"
+  if (NOTIFICATION_STATUS.NOTIF_STATUS_START.includes(notification.status)) {
+    classNameStatus = "notif_status_start";
+  } else if (NOTIFICATION_STATUS.NOTIF_STATUS_RUNNING.includes(notification.status)) {
+    classNameStatus = "notif_status_running";
+  } else if (NOTIFICATION_STATUS.NOTIF_STATUS_FINAL.includes(notification.status)) {
+    classNameStatus = "notif_status_final";
+  }
+  console.log("status:", classNameStatus)
+  console.log(NOTIFICATION_STATUS.NOTIF_STATUS_START.includes(notification.status))
+
   return (
     <ul className="text-xs pl-5 flex flex-wrap gap-2 space-y-2 text-gray-900 dark:text-white">
       <li className="content-end">
@@ -12,7 +24,7 @@ export const NotificationDetailsList = (props) => {
         <strong>JID:</strong> {notification.JID}
       </li>
       <li>
-        <strong>Status:</strong> {notification.status}
+        <strong>Status:</strong> <span className={classNameStatus}> {notification.status} </span>
       </li>
       <li>
         <strong>Consumer:</strong> {notification.consumer}
