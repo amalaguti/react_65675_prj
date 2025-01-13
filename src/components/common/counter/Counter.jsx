@@ -11,7 +11,6 @@ export const Counter = ({ count, callback }) => {
     callback(count - 1);
     };
 
-  console.log("count: ", count);
   return (
     <div className="notifications-counter inline-flex gap-2">
       <Button className="p-0 m-0 text-sm" onClick={substract}>-</Button>
