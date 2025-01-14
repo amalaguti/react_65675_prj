@@ -5,6 +5,7 @@ import { CartWidget } from "../../common/cartWidget/CartWidget.jsx";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader.jsx";
 
 const Navbar = (props) => {
+
   return (
     <>
       <nav className="navbar">
@@ -15,7 +16,7 @@ const Navbar = (props) => {
               <NavbarGeneralElement text="Platforms" href="/Platforms" />
             </div>
             <div className="navbar-container-notifications">
-              <NotificationsHeader id="notifications-header" className="notifications-header" logoId="notifications-header-logo"/>
+              <NotificationsHeader id="notifications-header" className="notifications-header" logoId="notifications-header-logo" platform={props.platform}/>
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-All"
                 text="All"

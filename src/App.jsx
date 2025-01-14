@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header user="Adrian" />
-      <Navbar notificationsCounter={count} />
+      <Navbar notificationsCounter={count} platform="Mock"/>
       <main>
         <Counter count={count} callback={setCount} />
         <ItemListContainer notifications={mockNotifications} platform="Mock"/>
