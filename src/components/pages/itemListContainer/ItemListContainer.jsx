@@ -18,9 +18,9 @@ const ItemListContainer = (props) => {
         id="notifications-container-cards"
         className="notifications-container-cards"
       >
-        <NotificationCard notification={mockNotifications[0]} />
-        <NotificationCard notification={mockNotifications[1]} />
-        <NotificationCard notification={mockNotifications[2]} />
+        {mockNotifications.map((notification, index) => (
+          <NotificationCard key={index} notification={notification} />
+        ))}
       </div>
     </div>
   );

@@ -12,8 +12,6 @@ export const NotificationDetailsList = (props) => {
   } else if (NOTIFICATION_STATUS.NOTIF_STATUS_FINAL.includes(notification.status)) {
     classNameStatus = "notif_status_final";
   }
-  console.log("status:", classNameStatus)
-  console.log(NOTIFICATION_STATUS.NOTIF_STATUS_START.includes(notification.status))
 
   return (
     <ul className="text-xs pl-5 flex flex-wrap gap-2 space-y-2 text-gray-900 dark:text-white">
