@@ -4,16 +4,33 @@ import { NotificationButtonsActions } from "./NotificationButtonsActions";
 
 import { Button, Card } from "flowbite-react";
 
+import imgPriority from "../../../../assets/priority.jpg";
+import imgStandard from "../../../../assets/standard.jpg";
+import imgDisposable from "../../../../assets/disposable.jpg";
+
 export function NotificationCard(props) {
   const notification = props.notification;
+
+  if (notification.type === "priority") {
+    notification.img = imgPriority;
+  } else if (notification.type === "standard") {
+    notification.img = imgStandard;
+  } else if (notification.type === "disposable") {
+    notification.img = imgDisposable;
+  } else {
+    notification.img = null;
+  }
 
   return (
     <>
       {notification ? (
         <Card className="notificationCard">
-          <h5 className="text-sm font-bold tracking-tight text-gray-500 dark:text-white">
-            {notification.title}
-          </h5>
+          <div className="flex items-center justify-between">
+            <h5 className="text-sm font-bold tracking-tight text-gray-500 dark:text-white">
+              {notification.title}
+            </h5>
+            <img className="notificationCardImg" width={80} height={80} src={notification.img} alt="image 1" />
+          </div>
           <p className="text-xs font-normal text-gray-700 dark:text-gray-400">
             {notification.description}
           </p>
