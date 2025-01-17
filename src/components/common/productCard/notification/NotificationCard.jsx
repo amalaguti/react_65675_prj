@@ -4,11 +4,16 @@ import { NotificationButtonsActions } from "./NotificationButtonsActions";
 
 import { Button, Card } from "flowbite-react";
 
-import imgPriority from "../../../../assets/priority.jpg";
-import imgStandard from "../../../../assets/standard.jpg";
-import imgDisposable from "../../../../assets/disposable.jpg";
+// import imgPriority from "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg";
+// import imgStandard from "../../../../assets/standard.jpg";
+// import imgDisposable from "../../../../assets/disposable.jpg";
+
 
 export function NotificationCard(props) {
+  const imgPriority = "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg";
+  const imgStandard = "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/standard_eemi6q.jpg";
+  const imgDisposable = "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/disposable_rhj4fu.jpg";
+
   const notification = props.notification;
 
   if (notification.type === "priority") {
@@ -20,6 +25,7 @@ export function NotificationCard(props) {
   } else {
     notification.img = null;
   }
+
 
   return (
     <>
