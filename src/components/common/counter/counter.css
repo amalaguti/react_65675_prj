@@ -2,9 +2,9 @@
   background-color: orange;
   color: black;
   font-weight: bold;
-  width: 2ch;
+  width: 5ch;
   height: auto;
   margin: 0;
-  padding: 0;
+  padding: 2px;
   justify-content: center;
 }

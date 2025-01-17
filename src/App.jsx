@@ -7,7 +7,7 @@ import Navbar from "./components/layout/navbar/Navbar.jsx";
 import { Component as Footer } from "./components/layout/footer/Footer.jsx";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 
-// import { Counter } from "./components/common/counter/Counter.jsx";
+
 
 
 

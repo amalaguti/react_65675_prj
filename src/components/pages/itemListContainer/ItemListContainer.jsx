@@ -5,7 +5,7 @@ import { NotificationCard } from "../../common/productCard/notification/Notifica
 import { fetchProducts } from "../../../utils/fetch";
 
 
-
+import { Counter } from "../../common/counter/Counter";
 
 const ItemListContainer = (props) => {
   const [items, setItems] = useState([]);
@@ -31,6 +31,8 @@ const ItemListContainer = (props) => {
   return (
     <>
       <div id="notifications-container" className="notifications-container">
+        <Counter count={count} callback={setCount} />
+        
         <NotificationsHeader
           id="notifications-header"
           className="notifications-header"
