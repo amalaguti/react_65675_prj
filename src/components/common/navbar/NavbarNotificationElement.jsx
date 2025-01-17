@@ -16,8 +16,3 @@ const NavbarNotificationElement = (props) => {
 };
 
 export default NavbarNotificationElement;
-
-
-// {props.notificationsCounter > 0 && (
-//   <span className="notification-counter">{props.notificationsCounter}</span>
-// )}

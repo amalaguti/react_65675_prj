@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./navbar.css";
 import NavbarGeneralElement from "../../common/navbar/NavbarGeneralElement.jsx";
 import NavbarNotificationElement from "../../common/navbar/NavbarNotificationElement.jsx";
@@ -5,6 +6,13 @@ import { CartWidget } from "../../common/cartWidget/CartWidget.jsx";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader.jsx";
 
 const Navbar = (props) => {
+  const [itemsCounter, setItemsCounter] = useState(
+    localStorage.getItem("itemsCounter")
+  );
+
+  setInterval(() => {
+    setItemsCounter(localStorage.getItem("itemsCounter"));
+  }, 1000);
 
   return (
     <>
@@ -16,12 +24,17 @@ const Navbar = (props) => {
               <NavbarGeneralElement text="Platforms" href="/Platforms" />
             </div>
             <div className="navbar-container-notifications">
-              <NotificationsHeader id="notifications-header" className="notifications-header" logoId="notifications-header-logo" platform={props.platform}/>
+              <NotificationsHeader
+                id="notifications-header"
+                className="notifications-header"
+                logoId="notifications-header-logo"
+                platform={props.platform}
+              />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-All"
                 text="All"
                 href="/NotificationsAll"
-                notificationsCounter={props.notificationsCounter}
+                notificationsCounter={itemsCounter}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Start"

@@ -16,6 +16,7 @@ const ItemListContainer = (props) => {
       .then((response) => {
         console.log("Fetching items")
         setItems(response);
+        localStorage.setItem("itemsCounter", response.length);
       })
       .catch((error) => {
         console.log("Fetch error:", error);
