@@ -9,30 +9,26 @@ import { Counter } from "../../common/counter/Counter";
 
 const ItemListContainer = (props) => {
   const [items, setItems] = useState([]);
-  const [count, setCount] = useState(items.length);
+
 
   useEffect(() => {
     fetchProducts(props.platform)
       .then((response) => {
         console.log("Fetching items")
         setItems(response);
-        setCount(response.length);
-
       })
       .catch((error) => {
         console.log("Fetch error:", error);
       })
       .finally(() => {});
-  }, [items, count]);
+  }, [items]);
 
   console.log("items", items.length);
-  console.log("count", count);
   
   return (
     <>
       <div id="notifications-container" className="notifications-container">
-        <Counter count={count} callback={setCount} />
-        
+        <Counter count={items.length} />
         <NotificationsHeader
           id="notifications-header"
           className="notifications-header"
