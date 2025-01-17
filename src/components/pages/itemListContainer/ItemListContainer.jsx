@@ -4,21 +4,30 @@ import NotificationsHeader from "../../common/notificationsHeader/NotificationsH
 import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
 import { fetchProducts } from "../../../utils/fetch";
 
+
+
+
 const ItemListContainer = (props) => {
-  // const mockNotifications = props.notifications;
   const [items, setItems] = useState([]);
+  const [count, setCount] = useState(items.length);
 
   useEffect(() => {
     fetchProducts(props.platform)
       .then((response) => {
+        console.log("Fetching items")
         setItems(response);
+        setCount(response.length);
+
       })
       .catch((error) => {
         console.log("Fetch error:", error);
       })
       .finally(() => {});
-  }, []);
+  }, [items, count]);
 
+  console.log("items", items.length);
+  console.log("count", count);
+  
   return (
     <>
       <div id="notifications-container" className="notifications-container">
