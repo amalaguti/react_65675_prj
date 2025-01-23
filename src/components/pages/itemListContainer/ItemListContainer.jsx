@@ -1,16 +1,15 @@
+
 import { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
 import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
 import { fetchItems } from "../../../utils/fetch";
-
-
 import { Counter } from "../../common/counter/Counter";
+
 
 const ItemListContainer = (props) => {
   const [items, setItems] = useState([]);
-
-
+  
   useEffect(() => {
     fetchItems(props.platform)
       .then((response) => {
@@ -20,6 +19,7 @@ const ItemListContainer = (props) => {
       })
       .catch((error) => {
         console.log("Fetch error:", error);
+        setError(error);
       })
       .finally(() => {});
   }, [items]);
@@ -29,6 +29,7 @@ const ItemListContainer = (props) => {
   return (
     <>
       <div id="notifications-container" className="notifications-container">
+        <button>TEST fetchItem</button>
         <Counter count={items.length} />
         <NotificationsHeader
           id="notifications-header"

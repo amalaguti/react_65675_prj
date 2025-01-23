@@ -1,9 +1,13 @@
 import { mockNotifications } from '../mock/notifications/notifications';
 
-export const fetchProducts = (platform) => {
+export const fetchItems = (platform) => {
   return new Promise((resolve, reject) => {
     if (platform === "Mock") {
-      resolve(mockNotifications);
+      // Mocking delay with setTimeout
+      setTimeout(() => {
+        resolve(mockNotifications);
+      }, 2000);
+      // resolve(mockNotifications);
     } else {
       reject({
         statusCode: 501,
@@ -12,3 +16,23 @@ export const fetchProducts = (platform) => {
     }
   });
 };
+
+
+export const fetchItem = (id) => {
+  return new Promise((resolve, reject) => {
+    const item = mockNotifications.find((item) => item.ID === id);
+    if (item) {
+      // resolve(item);
+      // Mocking delay with setTimeout
+      setTimeout(() => {
+        resolve(item);
+      }, 1000);
+    } else {
+      reject({
+        statusCode: 404,
+        message: "Item not found",
+      });
+    }
+  });
+};
+

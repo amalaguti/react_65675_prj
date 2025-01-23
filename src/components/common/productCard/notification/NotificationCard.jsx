@@ -1,18 +1,20 @@
 import "./NotificationCard.css";
 import { NotificationDetailsList } from "./NotificationDetailsList";
 import { NotificationButtonsActions } from "./NotificationButtonsActions";
-
+import { fetchItem } from "../../../../utils/fetch";
 import { Button, Card } from "flowbite-react";
 
 // import imgPriority from "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg";
 // import imgStandard from "../../../../assets/standard.jpg";
 // import imgDisposable from "../../../../assets/disposable.jpg";
 
-
 export function NotificationCard(props) {
-  const imgPriority = "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg";
-  const imgStandard = "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/standard_eemi6q.jpg";
-  const imgDisposable = "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/disposable_rhj4fu.jpg";
+  const imgPriority =
+    "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg";
+  const imgStandard =
+    "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/standard_eemi6q.jpg";
+  const imgDisposable =
+    "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/disposable_rhj4fu.jpg";
 
   const notification = props.notification;
 
@@ -26,7 +28,6 @@ export function NotificationCard(props) {
     notification.img = null;
   }
 
-
   return (
     <>
       {notification ? (
@@ -35,13 +36,32 @@ export function NotificationCard(props) {
             <h5 className="text-sm font-bold tracking-tight text-gray-500 dark:text-white">
               {notification.title}
             </h5>
-            <img className="notificationCardImg" width={80} height={80} src={notification.img} alt="image 1" />
+            <img
+              className="notificationCardImg"
+              width={80}
+              height={80}
+              src={notification.img}
+              alt="image 1"
+            />
           </div>
           <p className="text-xs font-normal text-gray-700 dark:text-gray-400">
             {notification.description}
           </p>
           <NotificationDetailsList notification={notification} />
-          <Button className="px-0 py-0 text-sm">
+          <Button
+            className="px-0 py-0 text-sm"
+            onClick={() => {
+              console.log("More info");
+              fetchItem(notification.ID)
+                .then((response) => {
+                  console.log("Fetched item", response);
+                })
+                .catch((error) => {
+                  console.log("Fetch error:", error);
+                })
+                .finally(() => {});
+            }}
+          >
             More info
             <svg
               className="-mr-1 ml-2 h-4 w-4"
