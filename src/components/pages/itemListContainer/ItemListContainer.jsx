@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
 import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
-import { fetchProducts } from "../../../utils/fetch";
+import { fetchItems } from "../../../utils/fetch";
 
 
 import { Counter } from "../../common/counter/Counter";
@@ -12,7 +12,7 @@ const ItemListContainer = (props) => {
 
 
   useEffect(() => {
-    fetchProducts(props.platform)
+    fetchItems(props.platform)
       .then((response) => {
         console.log("Fetching items")
         setItems(response);
@@ -47,7 +47,7 @@ const ItemListContainer = (props) => {
           </div>
         ) : (
           <strong>
-            <p>NO ITEMS AVAILABLE, BYE!</p>
+            <p>NO ITEMS AVAILABLE, WAIT A FEW SECONDS OR GOODBYE!</p>
           </strong>
         )}
       </div>
