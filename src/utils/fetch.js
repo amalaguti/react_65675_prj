@@ -1,6 +1,6 @@
 import { mockNotifications } from '../mock/notifications/notifications';
 
-export const fetchItems = (platform) => {
+export async function fetchItems(platform) {
   return new Promise((resolve, reject) => {
     if (platform === "Mock") {
       // Mocking delay with setTimeout
@@ -18,7 +18,7 @@ export const fetchItems = (platform) => {
 };
 
 
-export const fetchItem = (id) => {
+export async function fetchItem(id){
   return new Promise((resolve, reject) => {
     const item = mockNotifications.find((item) => item.ID === id);
     if (item) {

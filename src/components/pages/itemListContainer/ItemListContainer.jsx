@@ -29,7 +29,6 @@ const ItemListContainer = (props) => {
   return (
     <>
       <div id="notifications-container" className="notifications-container">
-        <button>TEST fetchItem</button>
         <Counter count={items.length} />
         <NotificationsHeader
           id="notifications-header"
