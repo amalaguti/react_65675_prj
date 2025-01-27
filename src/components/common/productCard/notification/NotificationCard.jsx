@@ -4,9 +4,6 @@ import { NotificationButtonsActions } from "./NotificationButtonsActions";
 import { fetchItem } from "../../../../utils/fetch";
 import { Button, Card } from "flowbite-react";
 
-// import imgPriority from "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg";
-// import imgStandard from "../../../../assets/standard.jpg";
-// import imgDisposable from "../../../../assets/disposable.jpg";
 
 export function NotificationCard(props) {
   const imgPriority =
