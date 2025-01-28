@@ -36,3 +36,10 @@ export async function fetchItem(id){
   });
 };
 
+
+export async function getItemById(id) {
+  const response = await fetchItem(id);
+  const product = response;
+  console.log("Fetched item", product);
+  return product
+}

@@ -1,0 +1,22 @@
+.productDetail {
+    background-color: lightgoldenrodyellow;
+    display: block;
+    justify-content: fit-content;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.productDetail ul {
+    display: block;
+    justify-content: fit-content;
+}
+
+.notificationCardImg {
+    width: 180px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px 20px 0 20px;
+    justify-self: center;
+    margin: 20px;
+}
