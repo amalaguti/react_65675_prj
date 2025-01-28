@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
