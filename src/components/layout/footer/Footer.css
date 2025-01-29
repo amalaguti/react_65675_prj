@@ -1,13 +1,13 @@
+
 #stickyFooterBottom {
-    position: sticky;
-    bottom: 0;
-    height: fit-content;
-    padding: 5px;
-    border-radius: 0%;
-  }
+  position: fixed;
+  bottom: 0;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 0%;
+}
 
-#stickyFooterBottom > * {
-    font-size: 60%;
+#stickyFooterBottom>* {
+  font-size: 60%;
 
-  }
-  
+}
