@@ -11,7 +11,6 @@ function App() {
       <BrowserRouter>
         <Header user="Adrian" />
         <Navbar platform="Mock" />
-
         <Routes>
           <Route
             path="/"
