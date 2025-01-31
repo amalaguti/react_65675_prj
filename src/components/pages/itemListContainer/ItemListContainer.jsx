@@ -1,4 +1,7 @@
+/* eslint-disable react/prop-types */
+
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import "./ItemListContainer.css";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
 import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
@@ -6,25 +9,28 @@ import { fetchItems } from "../../../utils/fetch";
 import { Counter } from "../../common/counter/Counter";
 
 
+
 const ItemListContainer = (props) => {
   const [items, setItems] = useState([]);
+  const { status } = useParams();
+  console.log("param status:", status);
+
   
   useEffect(() => {
-    fetchItems(props.platform)
+    fetchItems(props.platform, status)
       .then((response) => {
-        console.log("Fetching items")
+        console.log("Fetching items");
         setItems(response);
         localStorage.setItem("itemsCounter", response.length);
       })
       .catch((error) => {
         console.log("Fetch error:", error);
-        setError(error);
       })
       .finally(() => {});
-  }, [items]);
+  }, [status, props.platform]);
 
-  console.log("items", items.length);
-  
+  console.log("items count:", items.length);
+
   return (
     <>
       <div id="notifications-container" className="notifications-container">

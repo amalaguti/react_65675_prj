@@ -36,7 +36,7 @@ function App() {
               </>
             }
           />
-          <Route path="/category/:name" element={<ItemListContainer platform="Mock"/>} />
+          <Route path="/category/:status" element={<ItemListContainer platform="Mock"/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ItemDetail />} />
           <Route path="/platforms" element={<ComingSoon />} />

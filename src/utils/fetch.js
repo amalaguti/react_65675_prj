@@ -1,11 +1,13 @@
 import { mockNotifications } from '../mock/notifications/notifications';
+import { notificationFiltered } from './notificationManagement';
 
-export async function fetchItems(platform) {
+export async function fetchItems(platform, status) {
   return new Promise((resolve, reject) => {
     if (platform === "Mock") {
       // Mocking delay with setTimeout
       setTimeout(() => {
-        resolve(mockNotifications);
+        // Filter notifications by status
+        resolve(["start", "running", "final"].includes(status) ? notificationFiltered(mockNotifications, status) : mockNotifications);
       }, 2000);
       // resolve(mockNotifications);
     } else {
@@ -18,7 +20,7 @@ export async function fetchItems(platform) {
 };
 
 
-export async function fetchItem(id){
+export async function fetchItem(id) {
   return new Promise((resolve, reject) => {
     const item = mockNotifications.find((item) => item.ID === id);
     if (item) {

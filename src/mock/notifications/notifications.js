@@ -13,6 +13,19 @@ export let mockNotifications = [
       stocked: 7,
     },
     {
+      ID: "NOTIF_ID-0000002",
+      JID: "JID-22222",
+      status: "queued",
+      consumer: "192.168.1.1",
+      creation: "2025-01-11T17:48:27.019-03:00",
+      last_update: "2025-01-11T17:48:27.019-03:00",
+      type: "standard",
+      title: "Sample Notification 0000002",
+      description:
+        "This is a sample notification to mock and test during initial development",
+      stocked: 3,
+    },
+    {
       ID: "NOTIF_ID-7011250",
       JID: "JID-31917",
       status: "in-progress",
@@ -24,6 +37,32 @@ export let mockNotifications = [
       description:
         "This is a sample notification to mock and test during initial development",
       stocked: 8,
+    },
+    {
+      ID: "NOTIF_ID-7011259",
+      JID: "JID-31919",
+      status: "delayed",
+      consumer: "192.168.1.2",
+      creation: "2025-01-11T18:09:41.421-03:00",
+      last_update: "2025-01-11T18:09:41.421-03:00",
+      type: "priority",
+      title: "Sample Notification 70112509",
+      description:
+        "This is a sample notification to mock and test during initial development",
+      stocked: 3,
+    },
+    {
+      ID: "NOTIF_ID-7011260",
+      JID: "JID-31960",
+      status: "paused",
+      consumer: "192.168.1.2",
+      creation: "2025-01-11T18:09:41.421-03:00",
+      last_update: "2025-01-11T18:09:41.421-03:00",
+      type: "priority",
+      title: "Sample Notification 7011260",
+      description:
+        "This is a sample notification to mock and test during initial development",
+      stocked: 5,
     },
 
     {
@@ -38,5 +77,18 @@ export let mockNotifications = [
       description:
         "This is a sample notification to mock and test during initial development",
       stocked: 3,
+    },
+    {
+      ID: "NOTIF_ID-0475110",
+      JID: "JID-01791",
+      status: "failed",
+      consumer: "192.168.1.3",
+      creation: "2025-01-11T18:11:07.643-03:00",
+      last_update: "2025-01-11T18:11:07.643-03:00",
+      type: "disposable",
+      title: "Sample Notification 0475110",
+      description:
+        "This is a sample notification to mock and test during initial development",
+      stocked: 1,
     },
   ];

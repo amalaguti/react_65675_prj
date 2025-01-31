@@ -12,10 +12,11 @@ export function calcCost(type) {
 }
 
 
-export const NOTIFICATION_STATUS = { 
-  "NOTIF_STATUS_START": ["new", "queued", "scheduled"], 
-  "NOTIF_STATUS_RUNNING": ["in-progress", "paused", "delayed"], 
-  "NOTIF_STATUS_FINAL": ["completed", "failed", "canceled"] };
+export const NOTIFICATION_STATUS = {
+  "NOTIF_STATUS_START": ["new", "queued", "scheduled"],
+  "NOTIF_STATUS_RUNNING": ["in-progress", "paused", "delayed"],
+  "NOTIF_STATUS_FINAL": ["completed", "failed", "canceled"]
+};
 
 
 export function notificationImg(notificationType) {
@@ -27,3 +28,12 @@ export function notificationImg(notificationType) {
 
   return images[notificationType] || null;
 }
+
+export function notificationFiltered(notifications, status) {
+  /* Filter notifications by notification status (NOTIFICATION_STATUS) */  
+  if (status) {
+    return notifications.filter((notification) => NOTIFICATION_STATUS["NOTIF_STATUS_" + status.toUpperCase()].includes(notification.status));
+  }
+
+  return notifications;
+};
