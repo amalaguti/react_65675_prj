@@ -3,26 +3,12 @@ import { NotificationDetailsList } from "./NotificationDetailsList";
 import { NotificationButtonsActions } from "./NotificationButtonsActions";
 import { Button, Card } from "flowbite-react";
 import { Link } from "react-router";
+import { notificationImg } from "../../../../utils/notificationManagement";
+
 
 export function NotificationCard(props) {
-  const imgPriority =
-    "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg";
-  const imgStandard =
-    "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/standard_eemi6q.jpg";
-  const imgDisposable =
-    "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/disposable_rhj4fu.jpg";
-
   const notification = props.notification;
-
-  if (notification.type === "priority") {
-    notification.img = imgPriority;
-  } else if (notification.type === "standard") {
-    notification.img = imgStandard;
-  } else if (notification.type === "disposable") {
-    notification.img = imgDisposable;
-  } else {
-    notification.img = null;
-  }
+  notification.img = notificationImg(notification.type);
 
   return (
     <>

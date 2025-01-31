@@ -16,3 +16,14 @@ export const NOTIFICATION_STATUS = {
   "NOTIF_STATUS_START": ["new", "queued", "scheduled"], 
   "NOTIF_STATUS_RUNNING": ["in-progress", "paused", "delayed"], 
   "NOTIF_STATUS_FINAL": ["completed", "failed", "canceled"] };
+
+
+export function notificationImg(notificationType) {
+  const images = {
+    priority: "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/priority_rr3nfl.jpg",
+    standard: "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/standard_eemi6q.jpg",
+    disposable: "https://res.cloudinary.com/dgslkonqp/image/upload/v1737130326/disposable_rhj4fu.jpg",
+  };
+
+  return images[notificationType] || null;
+}
