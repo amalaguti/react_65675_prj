@@ -13,6 +13,3 @@ const NavbarGeneralElement = (props) => {
 
 export default NavbarGeneralElement;
 
-// <a className={props.className} href={props.href}>
-// className="{props.className} flex items-center"
-// </a>
