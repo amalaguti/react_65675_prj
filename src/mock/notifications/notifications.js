@@ -1,4 +1,4 @@
-export const mockNotifications = [
+export let mockNotifications = [
     {
       ID: "NOTIF_ID-0000000",
       JID: "JID-11111",
@@ -10,6 +10,7 @@ export const mockNotifications = [
       title: "Sample Notification 0000000",
       description:
         "This is a sample notification to mock and test during initial development",
+      stocked: 5,
     },
     {
       ID: "NOTIF_ID-7011250",
@@ -22,6 +23,7 @@ export const mockNotifications = [
       title: "Sample Notification 7011250",
       description:
         "This is a sample notification to mock and test during initial development",
+      stocked: 8,
     },
 
     {
@@ -35,5 +37,6 @@ export const mockNotifications = [
       title: "Sample Notification 0475109",
       description:
         "This is a sample notification to mock and test during initial development",
+      stocked: 3,
     },
   ];

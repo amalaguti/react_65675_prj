@@ -41,6 +41,9 @@ export const NotificationDetailsList = (props) => {
       <li>
         <strong>Cost:</strong> <b>${calcCost(notification.type)}</b>
       </li>
+      <li>
+        <strong>Stocked:</strong> <b>{notification.stocked}</b>
+      </li>
     </ul>
   );
 };
