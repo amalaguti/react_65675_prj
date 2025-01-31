@@ -26,6 +26,17 @@ function App() {
               </>
             }
           />
+                    <Route
+            path="/react_65675_prj"
+            element={
+              <>
+                <main>
+                  <ItemListContainer platform="Mock" />
+                </main>
+
+              </>
+            }
+          />
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ItemDetail />} />
           <Route path="/platforms" element={<ComingSoon />} />
