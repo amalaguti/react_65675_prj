@@ -1,12 +1,13 @@
-import "./productDetail.css";
+import "./itemDetail.css";
 import { getItemById } from "../../../utils/fetch";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { Button } from "flowbite-react";
-import { NotificationDetailsList } from "./notification/NotificationDetailsList";
+import { NotificationDetailsList } from "../../common/productCard/notification/NotificationDetailsList";
 
-function ProductDetail() {
+
+function ItemDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
@@ -38,4 +39,4 @@ function ProductDetail() {
   );
 }
 
-export default ProductDetail;
+export default ItemDetail;
