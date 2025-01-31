@@ -20,8 +20,8 @@ const Navbar = (props) => {
         <div className="navbar-container">
           <ul className="navbar-container-elements">
             <div className="navbar-container-general">
-              <NavbarGeneralElement text="Home" href="/home" />
-              <NavbarGeneralElement text="Platforms" href="/Platforms" />
+              <NavbarGeneralElement text="Home" href="/" />
+              <NavbarGeneralElement text="Platforms" href="/platforms" />
             </div>
             <div className="navbar-container-notifications">
               <NotificationsHeader

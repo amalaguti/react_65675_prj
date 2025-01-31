@@ -24,6 +24,7 @@ function App() {
             }
           />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/platforms" element={"UNDER CONSTRUCTION"} />
         </Routes>
         <Footer />
       </BrowserRouter>

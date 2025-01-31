@@ -21,12 +21,9 @@ function ProductDetail() {
     <>
       <Button>
         <Link to="/" className="flex items-center">
-          HOME
         </Link>
       </Button>
       <section className="productDetail">
-        {/* product Details testing - Id: {id} - {product.ID} {product.JID}{" "}
-        {product.status} */}
         <NotificationDetailsList notification={product} />
         <img
           className="notificationCardImg"
