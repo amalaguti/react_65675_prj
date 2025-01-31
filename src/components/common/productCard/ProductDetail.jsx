@@ -19,11 +19,12 @@ function ProductDetail() {
 
   return (
     <>
-      <Button>
-        <Link to="/" className="flex items-center">
-        </Link>
-      </Button>
       <section className="productDetail">
+        <div>
+          <Button>
+            <Link to="/">x</Link>
+          </Button>
+        </div>
         <NotificationDetailsList notification={product} />
         <img
           className="notificationCardImg"
