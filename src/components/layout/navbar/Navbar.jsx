@@ -33,23 +33,26 @@ const Navbar = (props) => {
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-All"
                 text="All"
-                href="/NotificationsAll"
+                href="/category/All"
                 notificationsCounter={itemsCounter}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Start"
                 text="Start"
-                href="/NotificationsStart"
+                href="category/start"
+                notificationsCounter={itemsCounter}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Running"
                 text="Running"
-                href="/NotificationsRunning"
+                href="/category/running"
+                notificationsCounter={itemsCounter}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Final"
                 text="Final"
-                href="/NotificationsFinal"
+                href="/category/final"
+                notificationsCounter={itemsCounter}
               />
             </div>
           </ul>
