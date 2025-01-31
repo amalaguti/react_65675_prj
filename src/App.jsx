@@ -5,6 +5,8 @@ import { Component as Footer } from "./components/layout/footer/Footer.jsx";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 import ItemDetail from "./components/pages/itemDetail/itemDetail.jsx";
 import { NotFound, ComingSoon } from "./components/pages/notFound/NotFound.jsx";
+import Cart from "./components/pages/cart/Cart";
+import Checkout from "./components/pages/checkout/Checkout";
 
 function App() {
   return (
@@ -24,8 +26,10 @@ function App() {
               </>
             }
           />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ItemDetail />} />
           <Route path="/platforms" element={<ComingSoon />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

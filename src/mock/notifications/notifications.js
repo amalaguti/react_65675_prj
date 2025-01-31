@@ -10,7 +10,7 @@ export let mockNotifications = [
       title: "Sample Notification 0000000",
       description:
         "This is a sample notification to mock and test during initial development",
-      stocked: 5,
+      stocked: 7,
     },
     {
       ID: "NOTIF_ID-7011250",
