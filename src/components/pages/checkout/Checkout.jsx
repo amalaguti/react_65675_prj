@@ -1,51 +1,60 @@
 import { useState } from "react";
+import { Button, TextInput, Label } from "flowbite-react";
 
 const Checkout = () => {
   const [userInfo, setUserInfo] = useState({
-    nombre: "",
-    telefono: "",
+    ticketId: "",
+    token: "",
     email: "",
   });
-  const comprar = (evento) => {
+  const submit = (evento) => {
     evento.preventDefault();
     console.log(userInfo);
   };
-  const capturarDatos = (evento) => {
-    // console.log(evento); // evento.target.value --> 88 & evento.target.name --> "telefono"
+  const collectFormData = (evento) => {
     const { value, name } = evento.target;
-    // console.log(value, name);
     setUserInfo({ ...userInfo, [name]: value });
   };
 
-  //   const persona = {
-  //     name: "pepe",
-  //     edad: 40,
-  //   };
-  //   console.log(persona.edad);
-  //   console.log(persona["edad"]);
-
   return (
     <div>
-      <form onSubmit={comprar}>
-        <input
+      {/* <form onSubmit={submit}>  Submit is handled by Button element*/}
+      <form
+        onSubmit={submit}
+        className="flex max-w-md flex-col gap-2 p-2 m-2 bg-yellow-200 rounded-lg"
+      >
+        <Label htmlFor="FormInputTicketId">Ticket ID</Label>
+        <TextInput
+          id="FormInputTicketId"
+          name="ticketId"
           type="text"
-          placeholder="nombre"
-          name="nombre"
-          onChange={capturarDatos}
+          placeholder="IT-SM-202502011948"
+          onChange={collectFormData}
+          required
         />
-        <input
+        <Label htmlFor="FormInputToken">Token</Label>
+        <TextInput
+          id="FormInputToken"
+          name="token"
           type="text"
-          placeholder="telefono"
-          name="telefono"
-          onChange={capturarDatos}
+          placeholder="token"
+          onChange={collectFormData}
+          required
         />
-        <input
-          type="text"
-          placeholder="email"
+        <Label htmlFor="FormInputEmail">Email</Label>
+        <TextInput
+          id="FormInputEmail"
           name="email"
-          onChange={capturarDatos}
+          type="email"
+          placeholder="e@mail"
+          onChange={collectFormData}
+          required
         />
-        <button>comprar</button>
+        <div className="flex justify-end">
+          <Button className="m-2 w-20" onClick={submit}>
+            Submit
+          </Button>
+        </div>
       </form>
     </div>
   );
