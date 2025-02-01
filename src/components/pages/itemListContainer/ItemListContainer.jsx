@@ -14,15 +14,12 @@ const ItemListContainer = (props) => {
   const [items, setItems] = useState([]);
   const { status } = useParams();
   console.log("param status:", status);
-
   
   useEffect(() => {
     fetchItems(props.platform, status)
       .then((response) => {
         console.log("Fetching items", status);
         setItems(response);
-        // Save items count in local storage
-        localStorage.setItem(`itemsCounter_${status ? status : 'all'}` , response.length);
       })
       .catch((error) => {
         console.log("Fetch error:", error);

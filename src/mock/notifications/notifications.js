@@ -26,6 +26,19 @@ export let mockNotifications = [
       stocked: 3,
     },
     {
+      ID: "NOTIF_ID-0000003",
+      JID: "JID-22223",
+      status: "scheduled",
+      consumer: "192.168.1.1",
+      creation: "2025-01-11T17:48:27.019-03:00",
+      last_update: "2025-01-11T17:48:27.019-03:00",
+      type: "standard",
+      title: "Sample Notification 0000003",
+      description:
+        "This is a sample notification to mock and test during initial development",
+      stocked: 3,
+    },
+    {
       ID: "NOTIF_ID-7011250",
       JID: "JID-31917",
       status: "in-progress",

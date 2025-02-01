@@ -3,7 +3,6 @@ import "./NavbarNotificationElement.css";
 import { Link } from "react-router";
 
 const NavbarNotificationElement = (props) => {
-  console.log("NavbarNotificationElement props", props.text, props.notificationsCounter);
   return (
     <li className={props.className}>
       <Link className={props.className} to={props.href}>

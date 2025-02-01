@@ -1,13 +1,26 @@
 import { mockNotifications } from '../mock/notifications/notifications';
 import { notificationFiltered } from './notificationManagement';
 
+function updateLocalStorageNotificationsCounter(notifications) {
+  localStorage.setItem('itemsCounter_all', notifications.length);
+  localStorage.setItem('itemsCounter_start', notificationFiltered(notifications, 'start').length);
+  localStorage.setItem('itemsCounter_running', notificationFiltered(notifications, 'running').length);
+  localStorage.setItem('itemsCounter_final', notificationFiltered(notifications, 'final').length);
+  // Fix for updating the counters in the Navbar by forcing a storage update event
+  window.dispatchEvent( new Event('storage') )
+}
+
 export async function fetchItems(platform, status) {
+
+  
   return new Promise((resolve, reject) => {
     if (platform === "Mock") {
       // Mocking delay with setTimeout
       setTimeout(() => {
         // Filter notifications by status
         resolve(["start", "running", "final"].includes(status) ? notificationFiltered(mockNotifications, status) : mockNotifications);
+        // Update local storage counters
+        updateLocalStorageNotificationsCounter(mockNotifications);
       }, 500);
       // resolve(mockNotifications);
     } else {

@@ -7,24 +7,42 @@ import NotificationsHeader from "../../common/notificationsHeader/NotificationsH
 
 const Navbar = (props) => {
   const [itemsCounter_all, setItemsCounter_all] = useState(
-    localStorage.getItem("itemsCounter_all")
+    localStorage.getItem("itemsCounter_all") || 0
   );
   const [itemsCounter_start, setItemsCounter_start] = useState(
-    localStorage.getItem("itemsCounter_start")
+    localStorage.getItem("itemsCounter_start") || 0
   );
   const [itemsCounter_running, setItemsCounter_running] = useState(
-    localStorage.getItem("itemsCounter_running")
+    localStorage.getItem("itemsCounter_running") || 0
   );
   const [itemsCounter_final, setItemsCounter_final] = useState(
-    localStorage.getItem("itemsCounter_final")
+    localStorage.getItem("itemsCounter_final") || 0
   );
 
-  setInterval(() => {
-    setItemsCounter_all(localStorage.getItem("itemsCounter_all"));
-    setItemsCounter_start(localStorage.getItem("itemsCounter_start"));
-    setItemsCounter_running(localStorage.getItem("itemsCounter_running"));
-    setItemsCounter_final(localStorage.getItem("itemsCounter_final"));
-  }, 1000);
+  // TODO: Fix the issue with the counter not updating when the user adds an item to the cart
+  // The new value is not reflected in the NavBar
+  // useEffect(() => {
+  //   setItemsCounter_all(localStorage.getItem("itemsCounter_all"));
+  //   setItemsCounter_start(localStorage.getItem("itemsCounter_start"));
+  //   setItemsCounter_running(localStorage.getItem("itemsCounter_running"));
+  //   setItemsCounter_final(localStorage.getItem("itemsCounter_final"));
+  // }, [itemsCounter_all, itemsCounter_start, itemsCounter_running, itemsCounter_final]);
+
+  // FIX: The issue with the counter not updating when the user adds an item to the cart by adding event listener for local storage. In addition, the event for storage is triggered on update of the local storage counters by fetch.js module.
+  useEffect(() => {
+    function handleLocalStorageUpdate(e) {
+      console.log("Local storage updated", e);
+      setItemsCounter_all(localStorage.getItem("itemsCounter_all"));
+      setItemsCounter_start(localStorage.getItem("itemsCounter_start"));
+      setItemsCounter_running(localStorage.getItem("itemsCounter_running"));
+      setItemsCounter_final(localStorage.getItem("itemsCounter_final"));
+    }
+    window.addEventListener('storage', handleLocalStorageUpdate);
+    return () => {
+      window.removeEventListener('storage', handleLocalStorageUpdate);
+    };
+  }, [itemsCounter_all, itemsCounter_start, itemsCounter_running, itemsCounter_final]);
+
 
   return (
     <>
