@@ -6,12 +6,24 @@ import { CartWidget } from "../../common/cartWidget/CartWidget.jsx";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader.jsx";
 
 const Navbar = (props) => {
-  const [itemsCounter, setItemsCounter] = useState(
-    localStorage.getItem("itemsCounter")
+  const [itemsCounter_all, setItemsCounter_all] = useState(
+    localStorage.getItem("itemsCounter_all")
+  );
+  const [itemsCounter_start, setItemsCounter_start] = useState(
+    localStorage.getItem("itemsCounter_start")
+  );
+  const [itemsCounter_running, setItemsCounter_running] = useState(
+    localStorage.getItem("itemsCounter_running")
+  );
+  const [itemsCounter_final, setItemsCounter_final] = useState(
+    localStorage.getItem("itemsCounter_final")
   );
 
   setInterval(() => {
-    setItemsCounter(localStorage.getItem("itemsCounter"));
+    setItemsCounter_all(localStorage.getItem("itemsCounter_all"));
+    setItemsCounter_start(localStorage.getItem("itemsCounter_start"));
+    setItemsCounter_running(localStorage.getItem("itemsCounter_running"));
+    setItemsCounter_final(localStorage.getItem("itemsCounter_final"));
   }, 1000);
 
   return (
@@ -34,25 +46,25 @@ const Navbar = (props) => {
                 className="notificationStatus notificationStatus-All"
                 text="All"
                 href="/category/All"
-                notificationsCounter={itemsCounter}
+                notificationsCounter={itemsCounter_all}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Start"
                 text="Start"
                 href="category/start"
-                notificationsCounter={itemsCounter}
+                notificationsCounter={itemsCounter_start}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Running"
                 text="Running"
                 href="/category/running"
-                notificationsCounter={itemsCounter}
+                notificationsCounter={itemsCounter_running}
               />
               <NavbarNotificationElement
                 className="notificationStatus notificationStatus-Final"
                 text="Final"
                 href="/category/final"
-                notificationsCounter={itemsCounter}
+                notificationsCounter={itemsCounter_final}
               />
             </div>
           </ul>

@@ -8,7 +8,7 @@ export async function fetchItems(platform, status) {
       setTimeout(() => {
         // Filter notifications by status
         resolve(["start", "running", "final"].includes(status) ? notificationFiltered(mockNotifications, status) : mockNotifications);
-      }, 2000);
+      }, 500);
       // resolve(mockNotifications);
     } else {
       reject({
@@ -28,7 +28,7 @@ export async function fetchItem(id) {
       // Mocking delay with setTimeout
       setTimeout(() => {
         resolve(item);
-      }, 1000);
+      }, 500);
     } else {
       reject({
         statusCode: 404,

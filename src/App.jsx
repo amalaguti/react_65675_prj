@@ -9,6 +9,7 @@ import Cart from "./components/pages/cart/Cart";
 import Checkout from "./components/pages/checkout/Checkout";
 
 function App() {
+  const platform = "Mock";
   return (
     <>
       <BrowserRouter>
@@ -20,7 +21,7 @@ function App() {
             element={
               <>
                 <main>
-                  <ItemListContainer platform="Mock" />
+                  <ItemListContainer platform={platform} />
                 </main>
               </>
             }
@@ -31,12 +32,12 @@ function App() {
             element={
               <>
                 <main>
-                  <ItemListContainer platform="Mock" />
+                  <ItemListContainer platform={platform} />
                 </main>
               </>
             }
           />
-          <Route path="/category/:status" element={<ItemListContainer platform="Mock"/>} />
+          <Route path="/category/:status" element={<ItemListContainer platform={platform}/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ItemDetail />} />
           <Route path="/platforms" element={<ComingSoon />} />
