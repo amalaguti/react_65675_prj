@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./counter.css";
 import { Button } from "flowbite-react";
+import { CartContext } from "../../../context/CartCreateContext";
 
 export const Counter = ({ item }) => {
   const [counter, setContador] = useState(1);
+  const { addToCart } = useContext(CartContext);
+  const { simpleTest } = useContext(CartContext);
 
   const addNotificationIssue = () => {
     if (counter < item.stocked) {
@@ -20,8 +23,10 @@ export const Counter = ({ item }) => {
     }
   };
 
-  const addToCart = () => {
-    alert("Added to cart");
+  const onAddToCart = () => {
+    alert("Added to cart - MISSING CONTEXT YET");
+    simpleTest();
+    // addToCart(objetoParaElCarrito);
   };
 
   return (
@@ -37,7 +42,7 @@ export const Counter = ({ item }) => {
       </Button>
     </div>
     <div>
-      <Button id="btnAddToCart" className="btnCtr"  onClick={addToCart}>
+      <Button id="btnAddToCart" className="btnCtr"  onClick={onAddToCart}>
         Add to Cart
       </Button>
       </div>

@@ -8,42 +8,49 @@ import { NotFound, ComingSoon } from "./components/pages/notFound/NotFound.jsx";
 import Cart from "./components/pages/cart/Cart";
 import Checkout from "./components/pages/checkout/Checkout";
 
+import { CartContextProvider } from "./context/CartContext";
+
 function App() {
   const platform = "Mock";
   return (
     <>
       <BrowserRouter>
         <Header user="Adrian" />
-        <Navbar platform="Mock" />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <main>
-                  <ItemListContainer platform={platform} />
-                </main>
-              </>
-            }
-          />
-          {/* For public deployment base path */}
-          <Route
-            path="/react_65675_prj"
-            element={
-              <>
-                <main>
-                  <ItemListContainer platform={platform} />
-                </main>
-              </>
-            }
-          />
-          <Route path="/category/:status" element={<ItemListContainer platform={platform}/>} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/product/:id" element={<ItemDetail />} />
-          <Route path="/platforms" element={<ComingSoon />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <CartContextProvider>
+          <Navbar platform="Mock" />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <main>
+                    <ItemListContainer platform={platform} />
+                  </main>
+                </>
+              }
+            />
+            {/* For public deployment base path */}
+            <Route
+              path="/react_65675_prj"
+              element={
+                <>
+                  <main>
+                    <ItemListContainer platform={platform} />
+                  </main>
+                </>
+              }
+            />
+            <Route
+              path="/category/:status"
+              element={<ItemListContainer platform={platform} />}
+            />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/product/:id" element={<ItemDetail />} />
+            <Route path="/platforms" element={<ComingSoon />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </CartContextProvider>
         <Footer />
       </BrowserRouter>
     </>
