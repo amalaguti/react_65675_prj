@@ -7,7 +7,6 @@ import { CartContext } from "../../../context/CartCreateContext";
 export const Counter = ({ item }) => {
   const [counter, setContador] = useState(1);
   const { addToCart } = useContext(CartContext);
-  const { simpleTest } = useContext(CartContext);
 
   const addNotificationIssue = () => {
     if (counter < item.stocked) {
@@ -24,29 +23,33 @@ export const Counter = ({ item }) => {
   };
 
   const onAddToCart = () => {
-    alert("Added to cart - MISSING CONTEXT YET");
-    simpleTest();
-    // addToCart(objetoParaElCarrito);
+    let cartItem = { ...item, quantity: counter };
+    addToCart(cartItem);
   };
 
   return (
     <>
-    <div className="flex notifications-counter gap-2">
-      <Button className="btnCtr p-0 m-0 text-sm" onClick={removeNotificationIssue}>
-        -
-      </Button>
-      <span className="spanSubmit">Submit issues: {counter} </span>
+      <div className="flex notifications-counter gap-2">
+        <Button
+          className="btnCtr p-0 m-0 text-sm"
+          onClick={removeNotificationIssue}
+        >
+          -
+        </Button>
+        <span className="spanSubmit">Submit issues: {counter} </span>
 
-      <Button className="btnCtr p-0 m-0 text-sm" onClick={addNotificationIssue}>
-        +
-      </Button>
-    </div>
-    <div>
-      <Button id="btnAddToCart" className="btnCtr"  onClick={onAddToCart}>
-        Add to Cart
-      </Button>
+        <Button
+          className="btnCtr p-0 m-0 text-sm"
+          onClick={addNotificationIssue}
+        >
+          +
+        </Button>
       </div>
-      </>
-
+      <div>
+        <Button id="btnAddToCart" className="btnCtr" onClick={onAddToCart}>
+          Add to Cart
+        </Button>
+      </div>
+    </>
   );
 };

@@ -43,12 +43,7 @@ export const CartContextProvider = ({ children }) => {
       return acc + elem.quantity;
     }, 0);
     return total;
-  };
-
-  const simpleTest = () => {
-    console.log("simpleTest");
-  }
-  
+  };  
 
   let data = {
     cart,
@@ -56,8 +51,7 @@ export const CartContextProvider = ({ children }) => {
     removeCart,
     removeById,
     getTotalAmount,
-    getTotalItems,
-    simpleTest
+    getTotalItems
   };
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
