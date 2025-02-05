@@ -5,10 +5,12 @@
     justify-self: center;
     width: 60%;
     padding: 20px;
+    padding-right: 2px;
+    padding-top: 2px;
     border-radius: 10px;
     margin: 40px;
 }
-.productDetail button {
+.productDetail #btnClose {
     background-color: transparent;
     color: black;
     justify-self: end;
@@ -21,8 +23,8 @@
 }
 
 .productDetail ul {
+    margin-top: 10px;
     display: block;
-    justify-content: fit-content;
 }
 
 .notificationCardImg {

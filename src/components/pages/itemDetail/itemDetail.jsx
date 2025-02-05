@@ -22,7 +22,7 @@ function ItemDetail() {
     <>
       <section className="productDetail">
         <div>
-          <Button>
+          <Button id="btnClose">
             <Link to="/">x</Link>
           </Button>
         </div>
