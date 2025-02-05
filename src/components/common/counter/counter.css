@@ -8,3 +8,9 @@
   padding: 2px;
   justify-content: center;
 }
+
+.notifications-counter span {
+  color: black;
+  font-weight: bold;
+
+}

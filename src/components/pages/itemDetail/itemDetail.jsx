@@ -1,10 +1,10 @@
 import "./itemDetail.css";
 import { getItemById } from "../../../utils/fetch";
-import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 import { Button } from "flowbite-react";
 import { NotificationDetailsList } from "../../common/productCard/notification/NotificationDetailsList";
+import { Counter } from "../../common/counter/Counter";
 
 
 function ItemDetail() {
@@ -26,6 +26,7 @@ function ItemDetail() {
             <Link to="/">x</Link>
           </Button>
         </div>
+        <Counter item={product} />
         <NotificationDetailsList notification={product} />
         <img
           className="notificationCardImg"

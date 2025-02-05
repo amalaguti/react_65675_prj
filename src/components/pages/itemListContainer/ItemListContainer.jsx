@@ -6,7 +6,6 @@ import "./ItemListContainer.css";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader";
 import { NotificationCard } from "../../common/productCard/notification/NotificationCard";
 import { fetchItems } from "../../../utils/fetch";
-import { Counter } from "../../common/counter/Counter";
 
 
 
@@ -32,7 +31,6 @@ const ItemListContainer = (props) => {
   return (
     <>
       <div id="notifications-container" className="notifications-container">
-        <Counter count={items.length} />
         <NotificationsHeader
           id="notifications-header"
           className="notifications-header"
