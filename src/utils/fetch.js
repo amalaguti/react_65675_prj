@@ -55,6 +55,6 @@ export async function fetchItem(id) {
 export async function getItemById(id) {
   const response = await fetchItem(id);
   const product = response;
-  console.log("Fetched item", product);
+  console.log("getItemById fetched item", product);
   return product
 }
