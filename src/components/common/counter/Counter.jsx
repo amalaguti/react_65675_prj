@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import "./counter.css";
 import { Button } from "flowbite-react";
 import { CartContext } from "../../../context/CartCreateContext";
+import { calcCost } from "../../../utils/notificationManagement";
 
 export const Counter = ({ item }) => {
   const [counter, setContador] = useState(1);
@@ -23,7 +24,8 @@ export const Counter = ({ item }) => {
   };
 
   const onAddToCart = () => {
-    let cartItem = { ...item, quantity: counter };
+    let cartItem = { ...item, quantity: counter, cost: calcCost(item.type) };
+    console.log("Add cartItem", cartItem);
     addToCart(cartItem);
   };
 

@@ -1,3 +1,4 @@
+// Cost is calculated based on the type of notification by the calcCost function
 export let mockNotifications = [
     {
       ID: "NOTIF_ID-0000000",

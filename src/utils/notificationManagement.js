@@ -1,4 +1,5 @@
 export function calcCost(type) {
+  // Cost is calculated based on the type of notification
   switch (type) {
     case "standard":
       return 1;
