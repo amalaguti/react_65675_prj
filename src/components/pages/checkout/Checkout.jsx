@@ -20,7 +20,6 @@ const Checkout = () => {
     <div>
       {/* <form onSubmit={submit}>  Submit is handled by Button element*/}
       <form
-        onSubmit={submit}
         className="flex max-w-md flex-col gap-2 p-2 m-2 bg-yellow-200 rounded-lg"
       >
         <Label htmlFor="FormInputTicketId">Ticket ID</Label>
