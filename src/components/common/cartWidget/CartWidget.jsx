@@ -13,7 +13,7 @@ export const CartWidget = () => {
       <Link to="/cart">
         <PiSolarPanelFill id="cartLogo" />
         <div>
-          <h2>TOTAL {total}</h2>
+          <h2>Items: {total}</h2>
         </div>
       </Link>
     </div>
