@@ -37,7 +37,7 @@ const Checkout = () => {
 
     request.items.forEach((elem) => {
       let refDoc = doc(notificationsCollection, elem.id);
-      updateDoc(refDoc, { stock: elem.stocked - elem.quantity });
+      updateDoc(refDoc, { stocked: elem.stocked - elem.quantity });
     });
   };
 
