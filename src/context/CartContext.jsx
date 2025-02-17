@@ -2,10 +2,6 @@
 import { useState } from "react";
 import { CartContext } from "./CartCreateContext";
 import { calcCost } from "../utils/notificationManagement";
-// Create context
-// Moved to separate file CartCreateContext.jsx 
-// to allow Fast refresh
-// export const CartContext = createContext(); 
 
 // Create context provider
 export const CartContextProvider = ({ children }) => {
@@ -13,7 +9,7 @@ export const CartContextProvider = ({ children }) => {
 
   const addToCart = (product) => {
     // Verify presence of product in cart array
-    let isInCart = cart.some((elem) => elem.ID === product.ID);
+    let isInCart = cart.some((elem) => elem.id === product.id);
     if (isInCart) {
       alert("Item already present in cart", product.ID);
     } else {

@@ -11,24 +11,30 @@ const Cart = () => {
   const { cart, removeCart, removeById, getTotalAmount } =
     useContext(CartContext);
 
-  let total = getTotalAmount(); 
+  let total = getTotalAmount();
 
   return (
     <div className="cartPanel px-1 py-1">
       <h1> Notifications submission panel </h1>
       <div className="flex justify-left gap-2 mb-5">
-        <Button className="text-sm text-yellow-100 bg-blue-900">
-          <Link to="/checkout"> CheckOut </Link>
-        </Button>
-        <Button
-          className="text-sm text-green-100 bg-black"
-          onClick={removeCart}
-        >
-          Empty cart
-        </Button>
+        {cart.length > 0 && (
+          <>
+            <Button className="text-sm text-yellow-100 bg-blue-900">
+              <Link to="/checkout"> CheckOut </Link>
+            </Button>
+            <Button
+              className="text-sm text-green-100 bg-black"
+              onClick={removeCart}
+            >
+              Empty cart
+            </Button>
+          </>
+        )}
       </div>
       <div className="block">
-        <span style={{fontSize:"2em", textDecoration: "underline"}}>Total Management Cost: ${total}</span>
+        <span style={{ fontSize: "2em", textDecoration: "underline" }}>
+          Total Management Cost: ${total}
+        </span>
       </div>
 
       {cart.map((product) => {
