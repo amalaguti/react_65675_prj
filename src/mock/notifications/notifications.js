@@ -1,7 +1,7 @@
 // Cost is calculated based on the type of notification by the calcCost function
 export let mockNotifications = [
     {
-      ID: "NOTIF_ID-0000000",
+      // ID: "NOTIF_ID-0000000",
       JID: "JID-11111",
       status: "new",
       consumer: "192.168.1.1",
@@ -14,7 +14,7 @@ export let mockNotifications = [
       stocked: 7,
     },
     {
-      ID: "NOTIF_ID-0000002",
+      // ID: "NOTIF_ID-0000002",
       JID: "JID-22222",
       status: "queued",
       consumer: "192.168.1.1",
@@ -27,7 +27,7 @@ export let mockNotifications = [
       stocked: 3,
     },
     {
-      ID: "NOTIF_ID-0000003",
+      // ID: "NOTIF_ID-0000003",
       JID: "JID-22223",
       status: "scheduled",
       consumer: "192.168.1.1",
@@ -40,7 +40,7 @@ export let mockNotifications = [
       stocked: 3,
     },
     {
-      ID: "NOTIF_ID-7011250",
+      // ID: "NOTIF_ID-7011250",
       JID: "JID-31917",
       status: "in-progress",
       consumer: "192.168.1.2",
@@ -53,7 +53,7 @@ export let mockNotifications = [
       stocked: 8,
     },
     {
-      ID: "NOTIF_ID-7011259",
+      // ID: "NOTIF_ID-7011259",
       JID: "JID-31919",
       status: "delayed",
       consumer: "192.168.1.2",
@@ -66,7 +66,7 @@ export let mockNotifications = [
       stocked: 3,
     },
     {
-      ID: "NOTIF_ID-7011260",
+      // ID: "NOTIF_ID-7011260",
       JID: "JID-31960",
       status: "paused",
       consumer: "192.168.1.2",
@@ -80,7 +80,7 @@ export let mockNotifications = [
     },
 
     {
-      ID: "NOTIF_ID-0475109",
+      // ID: "NOTIF_ID-0475109",
       JID: "JID-01790",
       status: "completed",
       consumer: "192.168.1.3",
@@ -93,7 +93,7 @@ export let mockNotifications = [
       stocked: 3,
     },
     {
-      ID: "NOTIF_ID-0475110",
+      // ID: "NOTIF_ID-0475110",
       JID: "JID-01791",
       status: "failed",
       consumer: "192.168.1.3",
