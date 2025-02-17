@@ -22,9 +22,7 @@ export const CartContextProvider = ({ children }) => {
   };
 
   const removeById = (id) => {
-    console.log("id", id);
-    let newCart = cart.filter((elem) => elem.ID !== id);
-    console.log("newCart", newCart);
+    let newCart = cart.filter((elem) => elem.id !== id);
     setCart(newCart);
   };
 
