@@ -15,9 +15,6 @@ export const NotificationDetailsList = (props) => {
 
   return (
     <ul className="text-xs pl-5 flex flex-wrap gap-2 space-y-2 text-gray-900 dark:text-white">
-      <li className="content-end">
-        <strong>ID:</strong> {notification.ID}
-      </li>
       <li>
         <strong>JID:</strong> {notification.JID}
       </li>

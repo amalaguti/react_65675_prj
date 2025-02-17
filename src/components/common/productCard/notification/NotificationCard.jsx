@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./NotificationCard.css";
 import { NotificationDetailsList } from "./NotificationDetailsList";
 import { NotificationButtonsActions } from "./NotificationButtonsActions";
@@ -32,7 +33,7 @@ export function NotificationCard(props) {
           <NotificationDetailsList notification={notification} />
           <Button>
             <Link
-              to={`/product/${notification.ID}`}
+              to={`/product/${notification.id}`}
               className="flex items-center"
             >
               More info
@@ -57,14 +58,3 @@ export function NotificationCard(props) {
   );
 }
 
-// onClick={() => {
-//   console.log("More info");
-//   fetchItem(notification.ID)
-//     .then((response) => {
-//       console.log("Fetched item", response);
-//     })
-//     .catch((error) => {
-//       console.log("Fetch error:", error);
-//     })
-//     .finally(() => {});
-// }}

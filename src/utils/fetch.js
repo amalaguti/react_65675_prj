@@ -10,9 +10,8 @@ function updateLocalStorageNotificationsCounter(notifications) {
   window.dispatchEvent( new Event('storage') )
 }
 
+// Replaced by Firebase
 export async function fetchItems(platform, status) {
-
-  
   return new Promise((resolve, reject) => {
     if (platform === "Mock") {
       // Mocking delay with setTimeout
@@ -32,7 +31,7 @@ export async function fetchItems(platform, status) {
   });
 };
 
-
+// Replaced by Firebase
 export async function fetchItem(id) {
   return new Promise((resolve, reject) => {
     const item = mockNotifications.find((item) => item.ID === id);
@@ -51,7 +50,7 @@ export async function fetchItem(id) {
   });
 };
 
-
+// Replaced by Firebase
 export async function getItemById(id) {
   const response = await fetchItem(id);
   const product = response;
