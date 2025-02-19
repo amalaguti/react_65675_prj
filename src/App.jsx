@@ -1,6 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Header from "./components/layout/header/Header.jsx";
-import Navbar from "./components/layout/navbar/Navbar.jsx";
+
+// ADRIAN
+import Navbar from "./components/layout/navbar/NavbarNew.jsx";
+
+
 import { Component as Footer } from "./components/layout/footer/Footer.jsx";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 import ItemDetail from "./components/pages/itemDetail/itemDetail.jsx";

@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import { Button } from "flowbite-react";
 import { NotificationDetailsList } from "../../common/productCard/notification/NotificationDetailsList";
 import { useContext } from "react";
-import { CartContext } from "../../../context/CartCreateContext";
+import { CartContext } from "../../../context/Contexts";
 
 const Cart = () => {
   const { cart, removeCart, removeById, getTotalAmount } =

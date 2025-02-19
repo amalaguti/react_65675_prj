@@ -2,7 +2,7 @@ import "./cartWidget.css";
 import { PiSolarPanelFill } from "react-icons/pi";
 import { Link } from "react-router";
 import { useContext } from "react";
-import { CartContext } from "../../../context/CartCreateContext";
+import { CartContext } from "../../../context/Contexts";
 
 export const CartWidget = () => {
   const { getTotalItems } = useContext(CartContext);

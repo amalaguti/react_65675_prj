@@ -1,6 +1,6 @@
 import "./checkout.css"
 import { useContext, useState } from "react";
-import { CartContext } from "../../../context/CartCreateContext";
+import { CartContext } from "../../../context/Contexts";
 import { db } from "../../../firebaseConfig";
 import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
 import { Button, TextInput, Label } from "flowbite-react";

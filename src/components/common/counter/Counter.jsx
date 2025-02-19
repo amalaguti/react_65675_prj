@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 import "./counter.css";
 import { Button } from "flowbite-react";
-import { CartContext } from "../../../context/CartCreateContext";
+import { CartContext } from "../../../context/Contexts";
 import { calcCost } from "../../../utils/notificationManagement";
 
 export const Counter = ({ item }) => {
