@@ -53,10 +53,6 @@ export const NotificationsContextProvider = ({ children }) => {
     getNotificationsByStatus();
   }, []);
 
-  console.log(">>>> NotificationsContextProvider");
-  console.log(">>>> notifications: ", notifications);
-  console.log(">>>> notificationsByStatus: ", notificationsByStatus);
-
   let data = {
     notifications,
     notificationsByStatus,
