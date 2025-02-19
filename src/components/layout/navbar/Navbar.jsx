@@ -5,36 +5,38 @@ import NavbarNotificationElement from "../../common/navbar/NavbarNotificationEle
 import { CartWidget } from "../../common/cartWidget/CartWidget.jsx";
 import NotificationsHeader from "../../common/notificationsHeader/NotificationsHeader.jsx";
 
+import { useContext } from "react";
+import { NotificationsContext } from "../../../context/Contexts.jsx";
+
 const Navbar = (props) => {
+  const { notifications } = useContext(NotificationsContext);
+  const { notificationsByStatus } = useContext(NotificationsContext);
   const [itemsCounter_all, setItemsCounter_all] = useState(
-    localStorage.getItem("itemsCounter_all") || 0
+    notifications ? notifications.length : 0
   );
   const [itemsCounter_start, setItemsCounter_start] = useState(
-    localStorage.getItem("itemsCounter_start") || 0
+    notificationsByStatus.start ? notificationsByStatus.start.length : 0
   );
   const [itemsCounter_running, setItemsCounter_running] = useState(
-    localStorage.getItem("itemsCounter_running") || 0
+    notificationsByStatus.running ? notificationsByStatus.running.length : 0
   );
   const [itemsCounter_final, setItemsCounter_final] = useState(
-    localStorage.getItem("itemsCounter_final") || 0
+    notificationsByStatus.final ? notificationsByStatus.final.length : 0
   );
 
-
-  // FIX: The issue with the counter not updating when the user adds an item to the cart by adding event listener for local storage. In addition, the event for storage is triggered on update of the local storage counters by fetch.js module.
   useEffect(() => {
-    function handleLocalStorageUpdate(e) {
-      console.log("Local storage updated", e);
-      setItemsCounter_all(localStorage.getItem("itemsCounter_all"));
-      setItemsCounter_start(localStorage.getItem("itemsCounter_start"));
-      setItemsCounter_running(localStorage.getItem("itemsCounter_running"));
-      setItemsCounter_final(localStorage.getItem("itemsCounter_final"));
-    }
-    window.addEventListener('storage', handleLocalStorageUpdate);
-    return () => {
-      window.removeEventListener('storage', handleLocalStorageUpdate);
-    };
-  }, [itemsCounter_all, itemsCounter_start, itemsCounter_running, itemsCounter_final]);
-
+    setItemsCounter_all(notifications ? notifications.length : 0);
+    setItemsCounter_start(
+      notificationsByStatus.start ? notificationsByStatus.start.length : 0
+    );
+    setItemsCounter_running(
+      notificationsByStatus.running ? notificationsByStatus.running.length : 0
+    );
+    setItemsCounter_final(
+      notificationsByStatus.final ? notificationsByStatus.final.length : 0
+    );
+  }
+  , [notifications, notificationsByStatus]);
 
   return (
     <>

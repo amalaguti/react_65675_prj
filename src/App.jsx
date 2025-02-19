@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Header from "./components/layout/header/Header.jsx";
 
 // ADRIAN
-import Navbar from "./components/layout/navbar/NavbarNew.jsx";
+import Navbar from "./components/layout/navbar/Navbar.jsx";
 
 
 import { Component as Footer } from "./components/layout/footer/Footer.jsx";
