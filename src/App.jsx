@@ -13,6 +13,7 @@ import Cart from "./components/pages/cart/Cart";
 import Checkout from "./components/pages/checkout/Checkout";
 
 import { CartContextProvider } from "./context/CartContext";
+import { NotificationsContextProvider } from "./context/NotificationsContext.jsx";
 
 function App() {
   const platform = "Mock";
@@ -20,6 +21,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header user="Adrian" />
+        <NotificationsContextProvider>
         <CartContextProvider>
           <Navbar platform="Mock" />
           <Routes>
@@ -55,6 +57,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </CartContextProvider>
+        </NotificationsContextProvider>
         <Footer />
       </BrowserRouter>
     </>

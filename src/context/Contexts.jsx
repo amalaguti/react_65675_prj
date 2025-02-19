@@ -1,5 +1,5 @@
 import { createContext} from "react";
 
-// Create context 
-// Set on separate file to allow fast refresh
+// Create contexts, set on separate file to allow fast refresh
 export const CartContext = createContext();
+export const NotificationsContext = createContext();

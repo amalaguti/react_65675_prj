@@ -1,52 +1,96 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import { CartContext } from "./Contexts";
-import { calcCost } from "../utils/notificationManagement";
+import { useState, useEffect } from "react";
+import { NotificationsContext } from "./Contexts";
+
+import { db } from "../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { NOTIFICATION_STATUS } from "../utils/notificationManagement";
 
 // Create context provider
-export const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+export const NotificationsContextProvider = ({ children }) => {
+  const [notifications, setNotifications] = useState([]);
+  const [notificationsByStatus, setNotificationsByStatus] = useState({});
 
-  const addToCart = (product) => {
-    // Verify presence of product in cart array
-    let isInCart = cart.some((elem) => elem.id === product.id);
-    if (isInCart) {
-      alert("Item already present in cart", product.ID);
-    } else {
-      setCart([...cart, product]);
-    }
+  const getNotificationsByStatus = () => {
+    let notificationsCollection = collection(db, "notifications");
+    const status = ["start", "running", "final"];
+    const notificationsByStatus = {};
+
+    status.forEach((status) => {
+      console.log("status:", status);
+      let _collection = filterCollection(notificationsCollection, status);
+      const getNotifications = getDocs(_collection);
+      getNotifications
+        .then((res) => {
+          const array = res.docs.map((elem) => {
+            return { id: elem.id, ...elem.data() };
+          });
+          notificationsByStatus[status] = array;
+          setNotificationsByStatus({ ...notificationsByStatus});
+          
+        })
+        .catch((error) => console.log(error));
+    });
   };
 
-  const removeCart = () => {
-    setCart([]);
-  };
+  // Get all notifications
+  useEffect(() => {
+    let notificationsCollection = collection(db, "notifications");
+    let _collection = notificationsCollection;
+    const getNotifications = getDocs(_collection);
+    getNotifications
+      .then((res) => {
+        const array = res.docs.map((elem) => {
+          return { id: elem.id, ...elem.data() };
+        });
+        setNotifications(array);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
-  const removeById = (id) => {
-    let newCart = cart.filter((elem) => elem.id !== id);
-    setCart(newCart);
-  };
+  // Get notifications by status
+  useEffect(() => {
+    getNotificationsByStatus();
+  }, []);
 
-  const getTotalAmount = () => {
-    let total = cart.reduce((acc, elem) => {
-      return acc + calcCost(elem.type) * elem.quantity;
-    }, 0);
-    return total;
-  };
-
-  const getTotalItems = () => {
-    let total = cart.reduce((acc, elem) => {
-      return acc + elem.quantity;
-    }, 0);
-    return total;
-  };  
+  console.log(">>>> NotificationsContextProvider");
+  console.log(">>>> notifications: ", notifications);
+  console.log(">>>> notificationsByStatus: ", notificationsByStatus);
 
   let data = {
-    cart,
-    addToCart,
-    removeCart,
-    removeById,
-    getTotalAmount,
-    getTotalItems
+    notifications,
+    notificationsByStatus,
   };
-  return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
+  
+  return (
+    <NotificationsContext.Provider value={data}>
+      {children}
+    </NotificationsContext.Provider>
+  );
+};
+
+// Filter collection by status arrays (start, running, final)
+const filterCollection = (collection, status) => {
+  let _collection = collection;
+  if (status === "start") {
+    let filteredCollection = query(
+      collection,
+      where("status", "in", NOTIFICATION_STATUS.NOTIF_STATUS_START)
+    );
+    _collection = filteredCollection;
+  } else if (status === "running") {
+    let filteredCollection = query(
+      collection,
+      where("status", "in", NOTIFICATION_STATUS.NOTIF_STATUS_RUNNING)
+    );
+    _collection = filteredCollection;
+  } else if (status === "final") {
+    let filteredCollection = query(
+      collection,
+      where("status", "in", NOTIFICATION_STATUS.NOTIF_STATUS_FINAL)
+    );
+    _collection = filteredCollection;
+  }
+
+  return _collection;
 };

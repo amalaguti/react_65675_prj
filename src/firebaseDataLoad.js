@@ -1,4 +1,4 @@
-import { mockNotifications } from "./mock/notifications/notifications.js";
+import { mockNotifications } from "./mock/notifications/notificationsNEW.js"; //"./mock/notifications/notifications.js";
 import { db } from './firebaseConfig.js';
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
