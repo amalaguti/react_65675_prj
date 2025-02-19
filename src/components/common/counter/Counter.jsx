@@ -25,7 +25,6 @@ export const Counter = ({ item }) => {
 
   const onAddToCart = () => {
     let cartItem = { ...item, quantity: counter, cost: calcCost(item.type) };
-    console.log("Add cartItem", cartItem);
     addToCart(cartItem);
   };
 

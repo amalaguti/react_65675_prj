@@ -16,7 +16,6 @@ const Checkout = () => {
 
   const submit = (evento) => {
     evento.preventDefault();
-    console.log(userInfo);
     // Submit order to firestore
     let total = getTotalAmount();
     let request = {
